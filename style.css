@@ -1,5 +1,6 @@
 /* ===== FONT IMPORT (MUST BE FIRST) ===== */
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400..800&display=swap');
 
 /* ===== CSS VARIABLES ===== */
 :root {
@@ -9,19 +10,15 @@
 
     /* Colors */
     --color-white: #ffffff;
-    --text-color: #121212;
+    --text-color: #000;
+    --color-Pink: #e53b9e;
+    --color-Yellow: #fddd28;
 
     /* Background */
-    --bg-color: #ffffff;
+    --bg-color: #4b2f95;
 }
 
-/* ===== DARK MODE AUTO-DETECT ===== */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #0a0a0a;
-        --text-color: #f5f5f5;
-    }
-}
+
 
 /* ===== RESET ===== */
 * {
@@ -32,7 +29,7 @@
 
 /* ===== HEADER ===== */
 header .pre-header {
-    background-color: #4b2f95;
+    background-color: var(--bg-color);
     color: var(--color-white);
     padding: 15px;
     font-size: 18px;
@@ -44,8 +41,8 @@ header .pre-header {
 }
 
 .pre-header a {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--color-Pink);
+    color: var(--color-white);
     padding: 5px 15px;
     border-radius: 25px;
     text-decoration: none;
@@ -116,7 +113,7 @@ header .pre-header {
   flex-direction: column;
 
   min-width: 200px;
-  background: #fff;
+  background: var(--color-white);
   border-radius: 12px;
 
   padding: 0; /* moved to li for better height control */
@@ -185,7 +182,7 @@ header .pre-header {
 .search-bar {
   display: flex;
   align-items: center;
-  background: #fff;
+  background: var(--color-white);
   overflow: hidden;
   width: 420px;
   transition: all 0.3s ease;
@@ -207,8 +204,8 @@ header .pre-header {
 
 /* BUTTON */
 .search-bar button {
-  background: #4b2f95;
-  color: #fff;
+  background: var(--bg-color);
+  color: var(--color-white);
   border: none;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 0px;
@@ -223,13 +220,14 @@ header .pre-header {
 
 /* BUTTON HOVER */
 .search-bar button:hover {
-  background: #6349a4;
+  background: var(--bg-color);
 }
 
 /* FOCUS EFFECT */
 .search-bar:focus-within {
-  border-color: #4b2f95;
-  box-shadow: 0 0 0 2px rgba(75, 47, 149, 0.2);
+  border-color: var(--bg-color);
+  border-radius: 100px;
+  box-shadow: 0 0 0 2px #f5f5f5;
 }
 
 .hero-section {
@@ -246,7 +244,7 @@ header .pre-header {
     display: flex;
     align-items: center;
     height: 100%;
-    max-width: 1200px;
+    max-width: 1170px;
     /* Optional: Add max-width for better control */
     margin: 0 auto;
     /* Center the container */
@@ -255,13 +253,18 @@ header .pre-header {
 }
 
 .hero-content {
-    width: 50%;
+    width: 45%;
     padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
     /* Space between content and image */
 }
 
 .hero-image {
-    width: 50%;
+    width: 55%;
     display: flex;
     border-radius: 100px;
     justify-content: center;
@@ -277,9 +280,8 @@ header .pre-header {
 
 .hero-subheading {
     font-size: 1.2rem;
-    color: #f8e170;
+    color: var(--color-Yellow);
     font-family: var(--font-heading);
-    margin-bottom: 10px;
     font-weight: 500;
 }
 
@@ -288,13 +290,26 @@ header .pre-header {
     font-family: var(--font-heading);
     color: #fff;
     line-height: 1.2;
-    margin-bottom: 20px;
 }
 
 .hero-content p {
     color: var(--color-white);
     font-family: var(--font-heading);
     font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.hero-content a {
+    background-color: #fff;
+    color: var(--bg-color);
+    padding: 15px 35px;
+    font-family: var(--font-heading);
+    border-radius: 45px;
+    font-weight: 500;
+    line-height: 1em;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: #000 4px 4px 0;
 }
 
 .social_btns {
@@ -315,4 +330,129 @@ header .pre-header {
     padding: 5px 15px;
     border-radius: 6px;
     border:2px dashed #fff;
+}
+
+.category_row {
+    background-color: #FDF4E6;
+    padding: 120px 20px;
+}
+
+.feature_row {
+    background-color: var(--bg-color);
+    padding: 120px 20px;
+}
+
+
+.category_content,.feature_content {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 20px;
+max-width: 1170px;
+margin: 0 auto;
+}
+
+.category_content img,.feature_content img {
+width: 100px;
+}
+
+.category_content .heading {
+    font-size: 43px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: #000;
+    line-height: 1.2;
+}
+
+.feature_content .heading {
+    font-size: 43px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--color-white);
+    line-height: 1.2;
+}
+
+.category_content p {
+    font-size:18px;
+    font-family: var(--font-body);
+    color: #000;
+    line-height: 1.2;
+    width: 40%;
+    line-height: 1.5em;
+    font-weight: 500;
+    text-align: center;
+}
+
+.feature_content p {
+    font-size:18px;
+    font-family: var(--font-body);
+    color: var(--color-white);
+    line-height: 1.2;
+    width: 40%;
+    line-height: 1.5em;
+    font-weight: 500;
+    text-align: center;
+}
+
+.category_content .grid_box {
+    display: grid;
+    gap: 40px;
+    margin-top: 30px;
+    grid-template-columns: repeat(6,1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.feature_content .fearture_grid_box {
+    display: grid;
+    gap: 40px;
+    margin-top: 30px;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.category_content .grid_box .img_box,.feature_content .fearture_grid_box .img_box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.category_content .grid_box img {
+    width: 185px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.feature_content .fearture_grid_box img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.category_content .grid_box .img_box a {
+    font-size:24px;
+    font-family: var(--font-heading);
+    color: #000;
+    line-height: 1.2;
+    line-height: 1.5;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+}
+
+.feature_content .fearture_grid_box .img_box a {
+    font-size:24px;
+    font-family: var(--font-heading);
+    color: var(--color-white);
+    line-height: 1.2;
+    line-height: 1.5;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
 }
