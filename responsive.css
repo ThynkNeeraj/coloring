@@ -1,0 +1,39 @@
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: auto;
+        min-height: 600px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .hero-content,
+    .hero-image {
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin-bottom: 40px;
+    }
+
+    .hero-heading {
+        font-size: 2.2rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .search-bar input {
+        background-color: #1a1a1a;
+        color: #fff;
+        border-color: #333;
+    }
+
+    .search-bar i {
+        color: #aaa;
+    }
+}
