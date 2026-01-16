@@ -78,7 +78,7 @@ header .pre-header {
 .logo img {
     height: 80px;
     width: auto;
-    padding: 5px 0px;
+    padding: 5px 0px 0px;
     object-fit: contain;
 }
 
@@ -116,6 +116,7 @@ header .pre-header {
 /* DROPDOWN ICON */
 .main-nav i {
     font-size: 14px;
+    margin-bottom: -5px;
     transition: transform 0.3s ease;
 }
 
@@ -191,7 +192,7 @@ header .pre-header {
     align-items: center;
     background: var(--color-white);
     overflow: hidden;
-    width: 420px;
+    width: 100%;
     transition: all 0.3s ease;
 }
 
@@ -601,21 +602,58 @@ header .pre-header {
     align-items: center;
 }
 
-.category_content .grid_box .img_box,
-.feature_content .fearture_grid_box .img_box {
+.category_content .grid_box .image_content,
+.feature_content .fearture_grid_box .image_content {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    position: relative;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+.category_content .grid_box .img_box,
+.feature_content .fearture_grid_box .img_box {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
+/* IMAGE */
 .img_box img {
     object-fit: cover;
     aspect-ratio: 1/1;
     width: 100%;
+    display: block;
 }
+
+/* OVERLAY */
+.img_box::after {
+    content: "";
+    border-radius: 100%;
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-Yellow);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature_content .img_box::after {
+    content: "";
+    border-radius: 15px;
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-Yellow);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.img_box:hover::after {
+    opacity: 0.5;
+}
+
 
 .category_content .grid_box img {
     width: 100%;
@@ -633,7 +671,7 @@ header .pre-header {
     border: 1px solid var(--color-black);
 }
 
-.category_content .grid_box .img_box a {
+.category_content .grid_box .image_content a {
     font-size: 24px;
     font-family: var(--font-heading);
     color: var(--color-black);
@@ -644,7 +682,7 @@ header .pre-header {
     text-align: center;
 }
 
-.feature_content .fearture_grid_box .img_box a {
+.feature_content .fearture_grid_box .image_content a {
     font-size: 24px;
     font-family: var(--font-heading);
     color: var(--color-black);
