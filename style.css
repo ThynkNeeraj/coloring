@@ -1,454 +1,1504 @@
-<!DOCTYPE html>
-<html lang="en">
+/* ===== FONT IMPORT (MUST BE FIRST) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400..800&display=swap');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Document</title>
-</head>
+/* ===== CSS VARIABLES ===== */
+:root {
+    /* Font Families */
+    --font-heading: 'Baloo Chettan 2', display;
+    --font-body: 'Raleway', sans-serif;
 
-<body>
+    /* Colors */
+    --color-white: #fff;
+    --color-black: #000;
+    --color-Pink: #e53b9e;
+    --color-Yellow: #fddd28;
 
-    <header>
-        <div class="pre-header"><span>
-                <p>Turn Your Kids Drawing into pillows!</p>
-            </span><span><a href="#">Claim free pillows</a></span></div>
+    /* Background */
+    --bg-color: #4b2f95;
+}
 
-        <div class="main-row">
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li class="has-submenu">
-                        <a href="#">Categories <i class="fa-solid fa-angle-down"></i></a>
-                        <ul class="sub-menu">
-                            <li><a href="#">Category 1</a></li>
-                            <li><a href="#">Category 2</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </nav>
 
-            <div class="logo"><a href="#"><img src="/Assets/images/free_colour_logo.png" alt=""></a></div>
 
-            <div class="search_section">
-                <div class="search-bar">
-                    <input type="search" placeholder="Type your keyword here...">
-                    <button type="submit">Search</button>
-                </div>
-            </div>
-        </div>
-    </header>
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="social_btns">
-                <p>linkdin</p>
-                <p>facebook</p>
-                <p>twitter</p>
-                <p>instagram</p>
-            </div>
-            <div class="hero-content">
-                <h3 class="hero-subheading">FREE COLORING PAGES</h3>
-                <h1 class="hero-heading">Fun Printable Pages That Spark Creativity</h1>
-                <p>Explore a collection of free coloring pages designed to inspire imagination creativity and joyful
-                    learning for
-                    kids of all ages.</p>
-                <a href="#">View more</a>
-            </div>
-            <div class="hero-image"><img src="/Assets/images/hero_img.png" alt="hero_img" loading="lazy">
-            </div>
-        </div>
+/* ===== HEADER ===== */
+header .pre-header {
+    background-color: var(--bg-color);
+    color: var(--color-white);
+    padding: 15px;
+    font-size: 18px;
+    display: flex;
+    font-weight: 500;
+    justify-content: center;
+    gap: 40px;
+    font-family: var(--font-heading);
+}
 
-        <img src="/Assets/images/top_left_corner.svg" alt="bottom_right_corner" class="top_left_corner">
-        <img src="/Assets/images/bottom_right_corner.svg" alt="top_left_corner" class="bottom_right_corner">
-        <img src="/Assets/images/cloud_blue.svg" alt="cloud_blue" class="cloud_blue">
-        <img src="/Assets/images/thread.svg" alt="thread" class="thread">
-        <img src="/Assets/images/star.svg" alt="star" class="star">
-        <div class="sun">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"
-                style="enable-background:new 0 0 100 100;" xml:space="preserve" fill="#FFCA6C">
-                <g>
-                    <g>
-                        <path
-                            d="M68.7,48.2c-0.5-1.3-2.7-1.7-3.1,0c-0.9,4-1.3,7.7-4.2,11c-2.9,3.2-7.2,4.9-11.5,4.9c-4.2,0-8.3-1.4-11.4-4.1   c-3.1-2.6-6.2-6.9-5.5-11.1c0.6-4.3,4.1-7.8,7.8-9.9c3.9-2.2,10.3-4.2,14.9-3.1c4.3,1.1,6.7,5.6,6.4,9.7c-0.3,4.2-3.1,8.7-6.8,11   c-4.4,2.7-13.1-0.8-12.6-6.5c0.2-2.1,2.5-5,4.8-5.4c0.8-0.1,1,0,1.1,0.5c-2.3,0.2-4.6,2.4-3.9,5c1.1,3.9,5.4,5.8,9.1,3.8   c3.5-1.9,5.2-6.3,4.1-10.1c-1.1-3.6-5.2-5.9-8.9-5.3c-3.1,0.5-6.3,3.1-8.3,5.4c-4.8,5.7-0.1,12.5,5.7,15.2   c6.5,2.9,12-0.1,15.7-5.6c3.4-5.1,4-11.9-0.2-16.8c-4.7-5.5-13.1-4.3-19.2-2c-6,2.2-11.8,6.8-13.2,13.2   c-1.4,6.4,3.2,12.8,8.2,16.5c6.2,4.6,14.6,5.5,21.6,2.1C65.3,63.3,71.4,55.1,68.7,48.2L68.7,48.2z">
-                        </path>
-                    </g>
-                    <g class="wdt-custom-circle-path-animation">
-                        <path
-                            d="M59,1.3c0-0.3-0.5-0.4-0.6-0.1c-0.9,3.3-1.8,6.7-2.7,10.1c-0.7,2.7-2.1,6.5-1.1,9.3c0.3,0.9,1.9,1.4,2.4,0.3   c1.3-2.7,1.1-6.5,1.5-9.5C59,8,59.4,4.6,59,1.3L59,1.3z">
-                        </path>
-                        <path
-                            d="M46.4,80.4c-0.4-0.9-1.4-1.3-2.2-0.6c-1.3,1.1-1.1,2.1-1.3,3.7c-0.1,1.7-0.3,3.4-0.3,5.2   c0,3.3,0.2,6.9,1.4,10c0.1,0.3,0.6,0.3,0.7-0.1c0.3-3.2,0.1-6.3,0.5-9.5c0.2-1.6,0.5-3.2,0.9-4.8C46.5,82.7,47.1,82,46.4,80.4   L46.4,80.4z">
-                        </path>
-                        <path
-                            d="M26.7,69.9c0-0.9-0.6-1.6-1.5-1.9c-1.3-0.4-2.3,0.3-3.5,0.9c-1.8,0.9-3.5,1.8-5.2,2.8c-2.7,1.6-5.8,3.5-7.7,6   C8.7,77.8,8.9,78,9,78c2.7-0.6,5.3-2.1,7.9-3.1c2.4-1,4.7-1.9,7.1-2.8c1.2,0.4,2.7-0.3,2.7-1.8C26.7,70.1,26.7,70,26.7,69.9   L26.7,69.9z">
-                        </path>
-                        <path
-                            d="M19.9,44.4c-2-2.1-6.8-0.8-9.4-0.5c-2.9,0.3-7,0.1-9.3,1.9C0.9,46,1,46.4,1.3,46.5c3.4,0.3,6.8,0.4,10.2,0.6   c2.5,0.1,6.6,1,8.4-1C20.3,45.5,20.4,44.9,19.9,44.4L19.9,44.4z">
-                        </path>
-                        <path
-                            d="M34.1,22.5c-2-1.8-3.8-3.8-5.7-5.7c-1.3-1.4-2.7-3.4-4.8-3.6c-0.1,0-0.1,0.1-0.1,0.1c0.2,2.1,1.6,4.3,2.5,6.2   c1.2,2.3,2.7,4.5,4.5,6.4C32.8,28.1,36.4,24.6,34.1,22.5z">
-                        </path>
-                        <path
-                            d="M87.3,20.9c-0.1-0.1-0.2,0-0.2,0c-0.3,0.6-1.7,0.9-2.3,1.1c-1,0.5-2,1-3,1.6c-2.1,1.2-4.6,2.1-6.5,3.7   c-0.7,0.6-1.1,1.5-0.7,2.4c0.1,0.2,0.2,0.3,0.3,0.5c0.6,0.8,1.6,1,2.4,0.7C79.2,30.2,90.3,23.3,87.3,20.9z">
-                        </path>
-                        <path
-                            d="M99,54.6c-1.3-2.1-4.4-1.9-6.6-2.3c-3-0.6-5.8-2.1-9-2.1c-3,0-2.9,4.2,0,4.5C86.3,55,89,56,91.9,56   c2.1,0,5.1,0,7-1.1C99,54.8,99,54.7,99,54.6L99,54.6z">
-                        </path>
-                        <path
-                            d="M80.4,84c-1.4-0.5-2.5-3-3.3-4.1c-1-1.3-2-2.5-3-3.8c-1.6-2.1-3.4-4.7-6.1-5.5c-1.2-0.3-2.3,0.8-2,1.9   c0.9,3.4,5.2,5.9,7.8,7.9c1.7,1.3,4.2,4.2,6.5,3.8C80.5,84.3,80.5,84.1,80.4,84z">
-                        </path>
-                    </g>
-                </g>
-            </svg>
-        </div>
-        <div class="rainbow">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 250 150"
-                style="enable-background:new 0 0 250 150;" xml:space="preserve">
-                <style type="text/css">
-                    .wdt-custom-demo_s-class-1 {
-                        fill: #D4772E;
-                    }
+.pre-header a {
+    background-color: var(--color-Pink);
+    color: var(--color-white);
+    text-transform: capitalize;
+    padding: 5px 15px;
+    box-shadow: var(--color-black) 4px 4px 0;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.4s ease-in;
+}
 
-                    .wdt-custom-demo_s-class-2 {
-                        fill: #7FA9AD;
-                    }
+.pre-header a:hover,
+.hero-content a:hover,
+.blog_box a:hover,
+.draw_pillow_content a:hover {
+    background-color: var(--color-Yellow);
+    box-shadow: var(--color-black) -4px -4px 0;
+    text-shadow: #00000060 1px 1px 1px;
+}
 
-                    .wdt-custom-demo_s-class-3 {
-                        fill: #DF9944;
-                    }
+.main-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px;
+}
 
-                    .wdt-custom-demo_s-class-4 {
-                        fill: #B6D3D6;
-                    }
+/* NAV */
 
-                    .wdt-custom-demo_s-class-5 {
-                        fill: #E6E6E6;
-                    }
-                </style>
-                <g>
-                    <path class="wdt-custom-demo_s-class-1"
-                        d="M171.3,110.9c-1.1-11.7-2.2-23.8-6.9-34.8c-5.1-11.8-14.1-20.6-24.8-24.1c-14.6-4.8-33.2,0.4-45.4,12.6  c-10.1,10.1-16.4,24.5-18.6,42.8l-6.7-0.6c2.4-19.6,9.2-35.2,20.3-46.2c6.5-6.5,15.1-11.5,24.3-14.2c9.9-2.9,19.8-2.9,28.6,0  c12.5,4.1,22.9,14.1,28.7,27.5c5.1,11.8,6.2,24.3,7.4,36.4L171.3,110.9L171.3,110.9z">
-                    </path>
-                    <path class="wdt-custom-demo_s-class-2"
-                        d="M184.5,117.9c-1.4-15.2-2.9-30.9-9-45.2c-6.7-15.5-18.6-27.1-32.6-31.6c-19.2-6.3-43.8,0.5-59.8,16.5  c-13.2,13.2-21.4,32-24.3,55.8l-6.7-0.6c3-25.1,11.8-45.1,26-59.2c8.3-8.3,19.3-14.7,30.9-18.1c12.6-3.7,25.2-3.7,36.3-0.1  c15.8,5.2,29.1,18,36.5,35.1c6.5,15.1,8,31.2,9.4,46.8L184.5,117.9L184.5,117.9z">
-                    </path>
-                    <path class="wdt-custom-demo_s-class-3"
-                        d="M194.1,117.1c-1.6-17.4-3.3-35.5-10.4-51.9C176,47.3,162.3,34,146.1,28.7c-22.1-7.3-50.5,0.6-69,19  c-15.2,15.2-24.6,36.8-27.9,64.2l-6.7-0.6c3.5-28.7,13.4-51.4,29.6-67.6C81.5,34.3,94,27,107.3,23.1c14.3-4.2,28.6-4.2,41.3-0.1  c18,5.9,33.1,20.4,41.5,39.9c7.4,17.2,9.1,35.7,10.8,53.5L194.1,117.1L194.1,117.1z">
-                    </path>
-                    <path class="wdt-custom-demo_s-class-4"
-                        d="M204.7,118.9c-1.9-20-3.8-40.7-11.9-59.5c-8.8-20.5-24.5-35.8-43.1-41.9c-25.4-8.3-57.9,0.6-79.1,21.8  c-17.5,17.4-28.2,42.2-32,73.6l-7.7-0.6c4-32.9,15.4-59,34-77.5C75.6,24,89.9,15.6,105.2,11.1c16.5-4.8,32.8-4.8,47.3-0.1  c20.6,6.8,38,23.5,47.6,45.8c8.5,19.7,10.5,40.9,12.4,61.4L204.7,118.9L204.7,118.9z">
-                    </path>
-                    <path class="wdt-custom-demo_s-class-5"
-                        d="M37.2,95.3c0.2-4.8,0.4-9.8,2.9-14.2c2.5-4.3,8-7.7,13.2-6.7c4.2,0.8,7.2,4.3,8.5,7.9  c1.2,3.7,0.9,7.6,0.6,11.4c2.3-5.7,8.5-9.9,15.3-10.2c3.2-0.1,6.7,0.7,8.6,3c1.6,1.9,1.8,4.6,1.1,6.9c-0.7,2.3-2.1,4.5-3.5,6.5  c4.1-0.5,7.5-0.7,11.5,0.4c4,1.1,7.6,3.3,9.6,6.5c2,3.2,2.1,7.4-0.2,10.5c-1.9,2.5-5.2,4.1-8.5,4.7c-3.3,0.6-6.8,0.5-10.2,0.4  c3.4,3.3,2.2,8.6-0.8,12.2c-3,3.7-8.6,5.3-13.5,4.3c-4.9-1-9-4.4-10.8-8.6c-1.1,4.6-3.8,8.8-8.5,10.9c-4.3,1.9-9.9,1.1-13.2-1.9  c-3.3-3-4-8.1-1.6-11.8c-4.1,3.8-9.9,6.5-15.8,6.8c-5.9,0.4-12.2-2.5-14.1-7.4c-1.2-3.2-0.4-7,1.8-9.8c2.2-2.8,5.7-4.8,9.4-5.8  c-6-1.4-10.1-7-9.8-12.5c0.3-5.5,5.2-10.7,11.3-11.8C26.9,86.2,34.7,90.3,37.2,95.3L37.2,95.3z">
-                    </path>
-                    <path class="wdt-custom-demo_s-class-5"
-                        d="M182.9,95.2c-0.7-3.1-0.2-6.5,1.7-9.3c1.9-2.8,5.1-4.9,8.7-5.4c3.6-0.5,7.4,0.7,9.7,3.1c2.7,2.9,3,7,3.1,10.8  c2.4-3.8,5.6-6.6,10.3-8c4.7-1.3,10.2-0.4,13.4,2.8c3.2,3.2,3.4,8.7-0.1,11.7c2.8-2.1,7.1-1.1,9.7,1.2c2.5,2.3,3.4,5.7,3.1,8.9  c-0.2,3.2-1.4,6.5-3.9,8.8c-2.5,2.4-6.4,3.7-9.9,2.9c3.9,2.9,3.8,8.2,1.3,12.2c-2.5,4-8.3,6.1-13.2,4.9c-4.1-1.1-7.1-4.1-9.4-7.3  c-0.5,3.8-3.9,6.8-7.8,8.2c-4,1.4-8.7,0.7-12-1.7c-3.2-2.4-4.8-6.5-3.9-10.2c-4.7,2.5-10.3,3.6-15.4,2c-5.2-1.6-9.2-6.1-9-10.9  c0.2-5.1,5.6-9.6,11.3-9.7c-5.5,0-10.9-4.3-11.3-9.1c-0.5-4.9,3.5-9.8,8.9-11.1C173.6,88.8,180.2,91,182.9,95.2L182.9,95.2z">
-                    </path>
-                </g>
-            </svg>
-        </div>
-        <img src="/Assets/images/square_dots.svg" alt="square_dots" class="square_dots">
-        <img src="/Assets/images/spring.svg" alt="spring" class="spring">
-        <img src="/Assets/images/three_star.svg" alt="three_star" class="three_star">
-    </section>
+.main-nav,
+.search_section {
+    width: 40%;
+}
 
-    <section class="category_section">
-        <div class="category_row">
-            <div class="category_content">
-                <img src="/Assets/images/heading-icon.png" alt="">
-                <div class="heading">Browse by Categories</div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, omnis?</p>
-                <div class="grid_box">
-                    <div class="image_content">
-                        <div class="img_box"><img src="/Assets/images/Animals.jpeg" alt="Animals">
-                        </div>
-                        <a href="#">Animals</a>
-                    </div>
-                    <div class="image_content">
-                        <div class="img_box"><img src="/Assets/images/Characters.jpeg" alt="Characters"></div>
-                        <a href="#">Characters</a>
-                    </div>
-                    <div class="image_content">
-                        <div class="img_box"><img src="/Assets/images/Fairytale.jpeg" alt="Fairytale">
-                        </div><a href="#">Fairytale</a>
-                    </div>
-                    <div class="image_content">
-                        <div class="img_box"><img src="/Assets/images/Sports.jpeg" alt="Sports"></div><a
-                            href="#">Sports</a>
-                    </div>
-                    <div class="image_content">
-                        <div class="img_box"><img src="/Assets/images/Food.jpeg" alt="Food"></div><a href="#">Food</a>
-                    </div>
-                    <div class="image_content">
-                        <div class="img_box"><img src="/Assets/images/Nature.jpeg" alt="Nature"></div><a
-                            href="#">Nature</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="/Assets/images/cloud_yellow.svg" alt="cloud" class="cloud">
-    </section>
+.logo {
+    width: 20%;
+}
 
-    <section>
-        <div class="feature_row">
-            <div class="feature_content">
-                <img src="/Assets/images/heading-icon-08.png" alt="">
-                <div class="heading">Featured Categories</div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, vitae vero.</p>
-                <div class="fearture_grid_box">
-                    <div class="image_content">
-                        <div class="img_box">
-                            <img src="/Assets/images/category_img1.jpg" alt="Dinosaurs">
-                            <div class="hover_overlay">
-                                <a href="#" class="hover_button">View All</a>
-                            </div>
-                        </div>
-                        <a href="#" class="category_title">Dinosaurs</a>
-                    </div>
+.logo img {
+    height: 80px;
+    width: auto;
+    padding: 5px 0px 0px;
+    object-fit: contain;
+}
 
-                    <div class="image_content">
-                        <div class="img_box">
-                            <img src="/Assets/images/category_img5.jpg" alt="Pirates">
-                            <div class="hover_overlay">
-                                <a href="#" class="hover_button">View All</a>
-                            </div>
-                        </div>
-                        <a href="#" class="category_title">Pirates</a>
-                    </div>
+.search_section {
+    display: flex;
+    justify-content: end;
+}
 
-                    <div class="image_content">
-                        <div class="img_box">
-                            <img src="/Assets/images/category_img7.jpg" alt="Space & Planets">
-                            <div class="hover_overlay">
-                                <a href="#" class="hover_button">View All</a>
-                            </div>
-                        </div>
-                        <a href="#" class="category_title">Space & Planets</a>
-                    </div>
+/* MAIN NAV */
+.main-nav>ul {
+    display: flex;
+    gap: 65px;
+    list-style: none;
+    align-items: center;
+}
 
-                    <div class="image_content">
-                        <div class="img_box">
-                            <img src="/Assets/images/category_img2.jpg" alt="Superheroes">
-                            <div class="hover_overlay">
-                                <a href="#" class="hover_button">View All</a>
-                            </div>
-                        </div>
-                        <a href="#" class="category_title">Superheroes</a>
-                    </div>
+/* LINKS */
+.main-nav a {
+    text-decoration: none;
+    color: var(--color-black);
+    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 20px;
 
-                    <div class="image_content">
-                        <div class="img_box">
-                            <img src="/Assets/images/category_img3.jpg" alt="Monsters">
-                            <div class="hover_overlay">
-                                <a href="#" class="hover_button">View All</a>
-                            </div>
-                        </div>
-                        <a href="#" class="category_title">Monsters</a>
-                    </div>
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
-                    <div class="image_content">
-                        <div class="img_box">
-                            <img src="/Assets/images/category_img4.jpg" alt="Cartoon">
-                            <div class="hover_overlay">
-                                <a href="#" class="hover_button">View All</a>
-                            </div>
-                        </div>
-                        <a href="#" class="category_title">Cartoon</a>
-                    </div>
+/* PARENT ITEM */
+.main-nav li {
+    position: relative;
+}
 
-                    <div class="image_content">
-                        <div class="img_box">
-                            <img src="/Assets/images/category_img6.jpg" alt="Cars">
-                            <div class="hover_overlay">
-                                <a href="#" class="hover_button">View All</a>
-                            </div>
-                        </div>
-                        <a href="#" class="category_title">Cars</a>
-                    </div>
+/* DROPDOWN ICON */
+.main-nav i {
+    font-size: 14px;
+    margin-bottom: -5px;
+    transition: transform 0.3s ease;
+}
 
-                    <div class="image_content">
-                        <div class="img_box">
-                            <img src="/Assets/images/category_img8.jpg" alt="Robots">
-                            <div class="hover_overlay">
-                                <a href="#" class="hover_button">View All</a>
-                            </div>
-                        </div>
-                        <a href="#" class="category_title">Robots</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+/* SUB MENU */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    background: var(--color-white);
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        max-height 0.35s ease,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    z-index: 1000;
+}
 
-    <section class="draw_pillow_section">
-        <img src="/Assets/images/cloud.svg" alt="cloud" class="cloud">
-        <div class="draw_pillow_container">
-            <div class="draw_pillow_content">
-                <h3 class="draw_pillow_subheading"><img src="/Assets/images/draw_pillow.png" alt="logo"></h3>
-                <h1 class="draw_pillow_heading">They color it We turn it into something they can cuddle</h1>
-                <p>From coloring pages to a real pillow — it’s their imagination brought to life</p>
-                <div class="icon_box_container">
-                    <div class="icon_box"><img src="/Assets/images/icon-image-1.svg" alt="icon-image-1">
-                        <p>Soft and safe for naps and story time.</p>
-                    </div>
-                    <div class="icon_box"><img src="/Assets/images/icon-image-2.svg" alt="icon-image-2">
-                        <p>Travels well & always holds its unique shape.</p>
-                    </div>
-                    <div class="icon_box"><img src="/Assets/images/icon-image-3.svg" alt="icon-image-3">
-                        <p>Machine washable (for everyday messes).</p>
-                    </div>
-                </div>
-                <a href="#">Create Free pillow</a>
-            </div>
-            <div class="draw_pillow_image"><img src="/Assets/images/draw_pillow.jpg" alt="Description of the image"
-                    loading="lazy"></div>
-        </div>
-        <img src="/Assets/images/cloud.svg" alt="cloud" class="cloud_after">
-    </section>
 
-    <section class="blog_section">
-        <div class="category_content">
-            <img src="/Assets/images/heading-icon-11.png" alt="">
-            <div class="heading">Kids Fashion Blog</div>
-            <p>Euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Convallis aenean et tortor.
-            </p>
-        </div>
+.sub-menu li {
+    width: 100%;
+}
 
-        <div class="blog_container">
-            <div class="blog_box">
-                <img src="/Assets/images/Blog-1.jpg" alt="Blog-1" class="blog_img">
-                <div class="heading">The Latest Trends In Kids’ Fashion For The Upcoming Summer Season</div>
-                <p>Maecenas sed ornare lacus, in placerat ante. In hac habitasse platea dictumst.</p>
-                <a href="#">Read More</a>
-            </div>
+.sub-menu a {
+    display: block;
+    padding: 12px 18px;
+    font-size: 16px;
+    color: #333;
+    white-space: nowrap;
+}
 
-            <div class="blog_box">
-                <img src="/Assets/images/Blog-2.jpg" alt="Blog-2" class="blog_img">
-                <div class="heading">The Latest Trends In Kids’ Fashion For The Upcoming Summer Season</div>
-                <p>Maecenas sed ornare lacus, in placerat ante. In hac habitasse platea dictumst.</p>
-                <a href="#">Read More</a>
-            </div>
 
-            <div class="blog_box">
-                <img src="/Assets/images/Blog-3.jpg" alt="Blog-3" class="blog_img">
-                <div class="heading">The Latest Trends In Kids’ Fashion For The Upcoming Summer Season</div>
-                <p>Maecenas sed ornare lacus, in placerat ante. In hac habitasse platea dictumst.</p>
-                <a href="#">Read More</a>
-            </div>
-        </div>
-    </section>
+/* SUB MENU HOVER */
+.sub-menu a:hover {
+    background: #f5f5f5;
+}
 
-    <section class="testimonial_section">
-        <img src="/Assets/images/cloud_white.svg" alt="cloud_white" class="testimonial_cloud">
-        <div class="testimonial_container">
-            <div class="testimonial_content">
-                <h3 class="testimonial_subheading">Top Reviews</h3>
-                <h1 class="testimonial_heading">Client Testimonials</h1>
-                <p>Commodo viverra maecenas accumsan lacus vel facilisis volutpat. vulputate dignissim suspendisse.</p>
-                <!-- Dots moved here -->
-                <div class="dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-            </div>
+/* SHOW DROPDOWN */
+.has-submenu:hover .sub-menu {
+    opacity: 1;
+    max-height: 300px;
+    visibility: visible;
+    transform: translateY(0);
+}
 
-            <div class="testimonial_slider">
-                <div class="customer_box">
-                    <div class="customer_image">
-                        <img src="/Assets/images/h1-testimonial-img-1.jpg" alt="testimonial">
-                        <div class="customer_heading">
-                            <h4>Jessica Lisa</h4>
-                            <span>FASHION DESIGNER</span>
-                        </div>
-                    </div>
-                    <div class="customer_info">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>Raecenas sed ornare lacus, in placerat ante. In hac habitasse platea dictumst. Donec vel
-                            euismod metus, auctor vehicula metus. Phasellus turpis sapien, elementum et est nec,
-                            ultrices lobortis est. Pellentesque habitant morbi tristique senectus et netus et malesuada.
-                        </p>
-                    </div>
-                </div>
-                <img src="/Assets/images/car.svg" alt="car" class="car">
-                <img src="/Assets/images/dashed_cloud.svg" alt="dashed_cloud" class="dashed_cloud">
-                <img src="/Assets/images/white_cloud.svg" alt="white_cloud" class="white_cloud">
-                <img src="/Assets/images/sun2.svg" alt="sun2" class="sun2">
-                <img src="/Assets/images/giraffe.svg" alt="giraffe" class="giraffe">
-                <img src="/Assets/images/rainbow.svg" alt="rainbow" class="rainbow">
-                <img src="/Assets/images/star_faded.svg" alt="star_faded" class="star_faded">
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-        <img src="/Assets/images/cloud.svg" alt="cloud" class="cloud">
-        <div class="footer__container">
-            <div class="footer__grid">
-                <!-- Column 1 -->
-                <div class="footer__col footer__col--logo">
-                    <div class="footer__logo">
-                        <img src="/Assets/images/Free_logo.png" alt="Company Logo">
-                    </div>
-                    <div class="footer__social">
-                        <a href="#" class="footer__social-icon"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="footer__social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer__social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="footer__social-icon"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
+/* ROTATE ICON */
+.has-submenu:hover i {
+    transform: rotate(180deg);
+}
 
-                <!-- Column 2 -->
-                <div class="footer__col">
-                    <div class="footer__heading">Quick Links</div>
-                    <ul class="footer__list">
-                        <li class="footer__item"><a href="#" class="footer__link">Home</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">About Us</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Categories</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Blog</a></li>
-                    </ul>
-                </div>
+/* LOGO */
+.logo a img {
+    width: 200px;
+}
 
-                <!-- Column 3 -->
-                <div class="footer__col">
-                    <div class="footer__heading">Resources</div>
-                    <ul class="footer__list">
-                        <li class="footer__item"><a href="#" class="footer__link">Resource 1</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Resource 2</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Resource 3</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Resource 4</a></li>
-                    </ul>
-                </div>
+/* SEARCH SECTION */
+.search_section {
+    display: flex;
+    justify-content: end;
+}
 
-                <!-- Column 4 -->
-                <div class="footer__col footer__col--newsletter">
-                    <div class="footer__heading">Stay Updated</div>
-                    <div class="footer__newsletter">
-                        <p class="footer__text">Subscribe to our newsletter</p>
-                        <div class="footer__search">
-                            <input type="email" class="footer__input" placeholder="Type your email here...">
-                            <button type="submit" class="footer__button">Subscribe</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <p class="footer__copyright">&copy; 2024 Your Company. All rights reserved.</p>
-        </div>
-    </footer>
+/* SEARCH BAR WRAPPER */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: var(--color-white);
+    overflow: hidden;
+    width: 100%;
+    transition: all 0.3s ease;
+}
 
-</body>
+/* INPUT FIELD */
+.search-bar input {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 0px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 15px;
+}
 
-</html>
+/* BUTTON */
+.search-bar button {
+    background: var(--bg-color);
+    color: var(--color-white);
+    border: none;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 30px;
+    padding: 13px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.search-bar button:hover {
+    background: var(--bg-color);
+}
+
+/* FOCUS EFFECT */
+.search-bar:focus-within {
+    border-color: var(--bg-color);
+    border-radius: 100px;
+    box-shadow: 0 0 0 2px #f5f5f5;
+}
+
+.hero-section {
+    height: 850px;
+    width: 100%;
+    position: relative;
+    background-color: var(--bg-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero-section .top_left_corner {
+    height: 225px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-section .bottom_right_corner {
+    height: 275px;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.hero-section .cloud_blue {
+    height: 130px;
+    top: 7%;
+    right: 40%;
+    position: absolute;
+}
+
+.hero-section .thread {
+    height: 107px;
+    bottom: 13%;
+    animation: moveRotate 6s ease-in-out infinite;
+    left: 30%;
+    position: absolute;
+}
+
+.hero-section .star {
+    height: 70px;
+    top: 10%;
+    right: 70%;
+    position: absolute;
+}
+
+.hero-section .sun {
+    height: 125px;
+    width: 125px;
+    top: 10%;
+    right: 2%;
+    position: absolute;
+}
+
+.testimonial_slider .dashed_cloud {
+    height: 70px;
+    width: 70px;
+    top: 10%;
+    left: 2%;
+    position: absolute;
+}
+
+.testimonial_slider .car {
+    height: 70px;
+    width: 70px;
+    animation: car-move 5s infinite linear;
+    top: 3%;
+    right: 40%;
+    position: absolute;
+    -webkit-animation: car-move 5s ease infinite;
+}
+
+@keyframes car-move {
+    0% {
+        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+    }
+
+    50% {
+        transform: translateX(20px);
+        -webkit-transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+    }
+}
+
+@-webkit-keyframes car-move {
+    0% {
+        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+    }
+
+    50% {
+        transform: translateX(20px);
+        -webkit-transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+    }
+}
+
+.testimonial_slider .white_cloud {
+    height: 70px;
+    width: 70px;
+    bottom: 4%;
+    right: 60%;
+    position: absolute;
+}
+
+.testimonial_slider .sun2 {
+    height: 70px;
+    width: 70px;
+    top: 6%;
+    right: 20%;
+    position: absolute;
+}
+
+.testimonial_slider .giraffe {
+    height: 180px;
+    width: 180px;
+    bottom: 10%;
+    animation: move 10s infinite linear;
+    left: -10%;
+    position: absolute;
+}
+
+.testimonial_slider .rainbow {
+    height: 120px;
+    width: 120px;
+    top: 0%;
+    right: 2%;
+    position: absolute;
+}
+
+.testimonial_slider .star_faded {
+    height: 70px;
+    width: 70px;
+    bottom: 10%;
+    right: 2%;
+    position: absolute;
+}
+
+.hero-section .sun .wdt-custom-circle-path-animation path {
+    animation: rotate-alt 5s infinite linear;
+    transform-origin: center center;
+}
+
+.hero-section .rainbow svg g>.wdt-custom-demo_s-class-5 {
+    animation: elementor-animation-bob .6s infinite linear;
+}
+
+.category_section .cloud {
+    width: 100%;
+    transform: rotateX(0deg);
+    background: linear-gradient(to bottom, #FDF4E6 0%, #FDF4E6 99%, var(--color-Yellow) 99%, var(--color-Yellow) 100%);
+    left: 0;
+    z-index: 100;
+    position: absolute;
+}
+
+.hero-section .rainbow {
+    height: 125px;
+    width: 208px;
+    bottom: 8%;
+    left: 2%;
+    transform: rotate(40deg);
+    position: absolute;
+}
+
+.hero-section .square_dots {
+    height: 80px;
+    bottom: 13%;
+    left: 55%;
+    animation: move 5s infinite linear;
+    position: absolute;
+}
+
+.hero-section .spring {
+    height: 80px;
+    top: 10%;
+    left: 2%;
+    position: absolute;
+    animation: spring 3s infinite linear;
+}
+
+.hero-section .three_star {
+    height: 100px;
+    bottom: 10%;
+    left: 25%;
+    position: absolute;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-content {
+    width: 45%;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.hero-image {
+    width: 55%;
+    display: flex;
+    border-radius: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.hero-subheading {
+    font-size: 1.2rem;
+    color: var(--color-Yellow);
+    font-family: var(--font-heading);
+    font-weight: 500;
+}
+
+.hero-heading {
+    font-size: 3rem;
+    font-family: var(--font-heading);
+    color: var(--color-white);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.hero-content a {
+    background-color: var(--color-Pink);
+    color: var(--color-white);
+    padding: 15px 35px;
+    font-family: var(--font-heading);
+    border-radius: 45px;
+    text-transform: capitalize;
+    font-weight: 500;
+    transition: 0.4s ease-in;
+    line-height: 1em;
+    transition: 0.3s ease-in;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: var(--color-black) 4px 4px 0;
+}
+
+.social_btns {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    right: 80%;
+    transform: rotate(270deg);
+    justify-content: center;
+}
+
+.social_btns p {
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    text-transform: capitalize;
+    font-size: 16px;
+    line-height: 1.2em;
+    padding: 5px 15px;
+    border-radius: 6px;
+    border: 2px dashed var(--color-white);
+}
+
+/* Category Section Styles */
+.category_row {
+    background-color: #FDF4E6;
+    padding: 120px 20px;
+}
+
+.category_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.category_content img {
+    width: 100px;
+}
+
+.category_content .heading {
+    font-size: 43px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--color-black);
+    line-height: 1.2;
+}
+
+.category_content p {
+    font-size: 18px;
+    font-family: var(--font-body);
+    color: var(--color-black);
+    line-height: 1.2;
+    width: 40%;
+    line-height: 1.5em;
+    font-weight: 500;
+    text-align: center;
+}
+
+.category_content .grid_box {
+    display: grid;
+    gap: 40px;
+    margin-top: 30px;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.category_content .grid_box .image_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.category_content .grid_box .img_box {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+/* Category images are circular */
+.category_content .grid_box img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.category_content .grid_box .image_content a {
+    font-size: 24px;
+    font-family: var(--font-heading);
+    color: var(--color-black);
+    line-height: 1.5;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* OLD YELLOW HOVER EFFECT - ONLY FOR CATEGORY CONTENT */
+.category_content .img_box::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-Yellow);
+    opacity: 0;
+    border-radius: 100%;
+    inset: 0px;
+    transition: opacity 0.3s;
+}
+
+.category_content .image_content:hover .img_box::after {
+    opacity: 0.5;
+}
+
+/* Feature Section Styles */
+.feature_row {
+    background-color: var(--color-Yellow);
+    padding: 120px 20px;
+}
+
+.feature_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.feature_content img {
+    width: 100px;
+}
+
+.feature_content .heading {
+    font-size: 43px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--color-black);
+    line-height: 1.2;
+}
+
+.feature_content p {
+    font-size: 18px;
+    font-family: var(--font-body);
+    color: var(--color-black);
+    line-height: 1.2;
+    width: 40%;
+    line-height: 1.5em;
+    font-weight: 500;
+    text-align: center;
+}
+
+.feature_content .fearture_grid_box {
+    display: grid;
+    gap: 40px;
+    margin-top: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.feature_content .fearture_grid_box .image_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.feature_content .fearture_grid_box .img_box {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.feature_content .fearture_grid_box img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: top;
+    border: 1px solid var(--color-black);
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.feature_content .fearture_grid_box .image_content a {
+    font-size: 24px;
+    font-family: var(--font-heading);
+    color: var(--color-black);
+    line-height: 1.5;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+}
+
+.feature_content .fearture_grid_box .image_content .hover_button {
+    background-color: var(--bg-color);
+    color: var(--color-white);
+    padding: 15px 35px;
+    font-family: var(--font-heading);
+    border-radius: 45px;
+    text-transform: capitalize;
+    font-weight: 500;
+    transition: 0.4s ease-in;
+    line-height: 1em;
+    transition: 0.3s ease-in;
+    text-decoration: none;
+    position: absolute;
+    bottom: 20px;
+    font-size: 20px;
+    box-shadow: var(--color-black) 4px 4px 0;
+    z-index: 2;
+}
+
+.feature_content .fearture_grid_box .image_content .hover_button:hover {
+    background-color: var(--color-Pink);
+    box-shadow: var(--color-black) -4px -4px 0;
+    text-shadow: #00000060 1px 1px 1px;
+    transform: scale(1.05);
+}
+
+/* Feature Hover Overlay Styles */
+.feature_content .hover_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+/* Feature Hover Effects */
+.feature_content .image_content:hover .hover_overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.feature_content .image_content:hover img {
+    transform: scale(1.05);
+}
+
+/* Category title styling - for both sections */
+.category_title {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.category_title:hover {
+    color: #007bff;
+}
+
+
+.draw_pillow_container {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    height: 100%;
+    background-image: url(/Assets/images/purple-bg.jpg);
+    max-width: 1200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    position: relative;
+    padding: 120px 0px;
+}
+
+.draw_pillow_content {
+    width: 45%;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.draw_pillow_image {
+    width: 55%;
+    display: flex;
+    border-radius: 100px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.draw_pillow_image img {
+    max-width: 570px;
+    height: auto;
+    border: 4px solid var(--color-white);
+    border-radius: 16px;
+}
+
+.draw_pillow_subheading {
+    width: 100%;
+    text-align: center;
+}
+
+.draw_pillow_subheading img {
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.draw_pillow_heading {
+    font-size: 46px;
+    font-family: var(--font-heading);
+    color: var(--color-white);
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.draw_pillow_content p {
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.draw_pillow_content a {
+    background-color: var(--color-Pink);
+    color: var(--color-white);
+    padding: 15px 35px;
+    font-family: var(--font-heading);
+    border-radius: 45px;
+    width: 80%;
+    text-transform: capitalize;
+    transition: 0.4s ease-in;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1em;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: var(--color-black) 4px 4px 0;
+}
+
+.draw_pillow_section {
+    width: 100%;
+    position: relative;
+    background-color: var(--bg-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.draw_pillow_section .cloud {
+    width: 100%;
+    background: linear-gradient(to bottom,
+            var(--color-Yellow) 0%,
+            var(--color-Yellow) 99%,
+            var(--bg-color) 99%,
+            var(--bg-color) 100%);
+    left: 0;
+    z-index: 100;
+    position: absolute;
+}
+
+.draw_pillow_section .cloud_after {
+    width: 100%;
+    transform: rotateX(180deg);
+    background: linear-gradient(to bottom,
+            #fff 0%,
+            #fff 99%,
+            var(--bg-color) 99%,
+            var(--bg-color) 100%);
+    left: 0;
+    z-index: 100;
+    position: absolute;
+}
+
+.icon_box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 15px 0px;
+    border-bottom: 2px dashed var(--color-white);
+}
+
+.icon_box p {
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+
+.icon_box_container {
+    margin-bottom: 40px;
+}
+
+.blog_section {
+    background-color: #fff;
+    padding: 80px 0px;
+}
+
+/* BLOG SECTION */
+.blog_container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0px;
+}
+
+/* BLOG CARD */
+.blog_box {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog_box:hover {
+    transform: translateY(-6px);
+}
+
+/* BLOG IMAGE */
+.blog_img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+/* BLOG CONTENT */
+.blog_box .heading {
+    padding: 16px 0px 8px;
+    line-height: 1.2em;
+    font-size: 27px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--color-black);
+}
+
+.blog_box p,
+.testimonial_content p {
+    padding: 0px;
+    line-height: 1.6;
+    color: #797979;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* READ MORE */
+.blog_box a {
+    background-color: var(--color-Pink);
+    color: var(--color-white);
+    padding: 15px 35px;
+    font-family: var(--font-heading);
+    border-radius: 45px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+    transition: 0.4s ease-in;
+    line-height: 1em;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: var(--color-black) 4px 4px 0;
+}
+
+
+
+/* MAIN CONTAINER */
+
+.testimonial_section {
+    background-color: #FDF4E6;
+}
+
+.testimonial_container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    align-items: center;
+    gap: 30px;
+
+    padding: 120px 40px 60px;
+}
+
+/* LEFT CONTENT */
+.testimonial_content {
+    max-width: 100%;
+}
+
+.testimonial_subheading {
+    font-size: 1.2rem;
+    color: var(--color-black);
+    font-family: var(--font-heading);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.testimonial_heading {
+    padding: 16px 0px 8px;
+    line-height: 1.2em;
+    font-size: 43px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--color-black);
+}
+
+.testimonial_content>p {
+    font-size: 18px;
+    line-height: 1.7;
+    font-family: var(--font-body);
+    color: #6b6b6b;
+    margin-bottom: 30px;
+}
+
+/* DOTS */
+.dots {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 36px;
+    background: var(--bg-color);
+    border-radius: 20px;
+}
+
+.dot:hover {
+    background: #bbb;
+}
+
+/* SLIDER CARD */
+.testimonial_slider {
+    background: var(--bg-color);
+    border-radius: 28px;
+    padding: 60px 40px 60px 80px;
+    color: #fff;
+    overflow: visible;
+    width: 700px;
+    box-shadow: 0 10px 30px rgba(107, 84, 166, 0.2);
+}
+
+
+.testimonial_slider {
+    position: relative;
+}
+
+.testimonial_slider {
+    position: relative;
+}
+
+.customer_box::before {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    top: 100%;
+    left: 145px;
+    width: 24px;
+    height: 200%;
+    /* taller than container for smooth loop */
+    background: url("/Assets/images/dashed.svg") repeat-y;
+    animation: marquee-down 5s linear infinite;
+}
+
+/* KEYFRAMES */
+@keyframes marquee-down {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        transform: translateY(-75%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+
+/* TESTIMONIAL BOX */
+.customer_box {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 50px;
+    position: relative;
+    overflow: hidden !important;
+    align-items: center;
+}
+
+/* IMAGE */
+.customer_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.customer_image img {
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* CUSTOMER HEADING */
+.customer_heading h4 {
+    padding: 16px 0px 8px;
+    line-height: 1.2em;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--color-white);
+}
+
+.customer_heading span {
+    padding: 16px 0px 8px;
+    line-height: 1.2em;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--font-heading);
+    color: var(--color-white);
+}
+
+/* CUSTOMER INFO */
+.fa-star {
+    font-family: 'Cutie Icons';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+
+.fa-star:before {
+    content: "\e806";
+}
+
+.customer_info .stars {
+    margin-bottom: 15px;
+    color: #fff;
+    display: flex;
+    gap: 5px;
+    font-size: 18px;
+}
+
+.customer_info p {
+    padding: 0px;
+    line-height: 1.4;
+    color: var(--color-white);
+    margin-bottom: 0px;
+    flex-grow: 1;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.testimonial_section .testimonial_cloud {
+    width: 100%;
+    transform: rotateX(180deg);
+    background: linear-gradient(to bottom, #FDF4E6 0%, #FDF4E6 99%, var(--color-white) 99%, var(--color-white) 100%);
+    left: 0;
+    z-index: 100;
+    position: absolute;
+}
+
+/* Footer Styles */
+.footer .cloud {
+    width: 100%;
+    background: linear-gradient(to bottom,
+            #FDF4E6 0%,
+            #FDF4E6 99%,
+            transparent 99%,
+            transparent 100%);
+    left: 0;
+    z-index: 100;
+    position: absolute;
+}
+
+.footer {
+    background-color: var(--bg-color);
+    color: #ecf0f1;
+    padding: 0px 0 20px;
+    font-family: var(--font-body);
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 40px;
+}
+
+/* Grid Layout */
+.footer__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+
+/* Column Styles */
+/* .footer__col {
+} */
+
+
+.footer__col--logo .footer__logo {
+    margin-bottom: 20px;
+}
+
+.footer__col--logo .footer__logo img {
+    max-width: 180px;
+    height: auto;
+}
+
+
+/* Logo */
+/* .footer__logo {
+} */
+
+
+/* Social Icons */
+.footer__social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer__social-icon {
+    color: var(--bg-color);
+    font-size: 20px;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.footer__social-icon:hover {
+    color: var(--color-Pink);
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Heading */
+.footer__heading {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--color-white);
+    margin-bottom: 25px;
+}
+
+/* Lists */
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__item {
+    margin-bottom: 12px;
+}
+
+.footer__link {
+    color: var(--color-white);
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+    font-family: var(--font-body);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer__link:hover {
+    color: var(--color-Pink);
+    padding-left: 5px;
+}
+
+
+/* Newsletter Section */
+/* .footer__col--newsletter .footer__newsletter {
+} */
+
+
+.footer__text {
+    color: var(--color-white);
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-family: var(--font-body);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer__search {
+    display: flex;
+    gap: 0px;
+}
+
+.footer__input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 0px;
+    font-size: 14px;
+    background: var(--color-white);
+    color: #ecf0f1;
+    font-family: var(--font-body);
+}
+
+.footer__input::placeholder {
+    color: #95a5a6;
+}
+
+.footer__input:focus {
+    outline: none;
+    color: #000;
+}
+
+.footer__button {
+    padding: 12px 25px;
+    background: var(--color-Pink);
+    color: white;
+    border: none;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+    font-family: var(--font-body);
+    font-size: 14px;
+}
+
+.footer__button:hover {
+    background: var(--color-Yellow);
+    text-shadow: #00000060 1px 1px 1px;
+}
+
+/* Footer Bottom */
+.footer__bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    color: #95a5a6;
+}
+
+.footer__copyright {
+    color: var(--color-white);
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+    font-family: var(--font-body);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+@keyframes spring {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    40% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    50% {
+        transform: scale3d(0.85, 1.15, 1);
+    }
+
+    65% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    75% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes move {
+
+    from,
+    to {
+        transform: translate3d(0, 0, 0)
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translate3d(5px, 0, 0)
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translate3d(-5px, 0, 0)
+    }
+}
+
+@keyframes moveRotate {
+
+    from,
+    to {
+        transform: translateX(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(14px) rotate(-14deg);
+    }
+
+    100% {
+        transform: translateX(0px) rotate(0deg);
+    }
+}
+
+@keyframes rotate-alt {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes elementor-animation-bob {
+    0% {
+        transform: translateY(-8px)
+    }
+
+    50% {
+        transform: translateY(-4px)
+    }
+
+    100% {
+        transform: translateY(-8px)
+    }
+}
