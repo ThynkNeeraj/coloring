@@ -728,7 +728,7 @@ header .pre-header {
 
 .coloring_pages_section .black_dot_heart {
     height: 80px;
-    top: 16%;
+    top: 14%;
     left: 12%;
     transform: rotate(-30deg);
     position: absolute;
@@ -997,6 +997,7 @@ background-color: var(--color-Yellow);
     z-index: 1;
 }
 
+/* Hover overlay (already present) */
 .coloring_pages_content .hover_overlay {
     position: absolute;
     top: 0;
@@ -1014,11 +1015,35 @@ background-color: var(--color-Yellow);
     z-index: 1;
 }
 
-/* Feature Hover Effects */
+/* Show overlay on hover */
 .feature_content .image_content:hover .hover_overlay {
     opacity: 1;
     visibility: visible;
 }
+
+/* Magnify plus icon */
+.coloring_pages_content .hover_overlay::before {
+    content: "\f00e"; /* fa-magnifying-glass-plus */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 42px;
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    background: var(--color-Pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.6);
+    transition: transform 0.3s ease;
+}
+
+/* Icon zoom-in animation */
+.feature_content .image_content:hover .hover_overlay::before {
+    transform: scale(1);
+}
+
 
 .feature_content .image_content:hover img {
     transform: scale(1.05);
