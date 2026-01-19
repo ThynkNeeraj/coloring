@@ -406,6 +406,15 @@ header .pre-header {
     position: absolute;
 }
 
+.feature_section .cloud {
+    width: 100%;
+    transform: rotateX(-180deg);
+    background: linear-gradient(to bottom, #fff 0%, #fff 99%, var(--color-Yellow) 99%, var(--color-Yellow) 100%);
+    left: 0;
+    z-index: 100;
+    position: absolute;
+}
+
 .hero-section .rainbow {
     height: 125px;
     width: 208px;
@@ -844,7 +853,7 @@ header .pre-header {
     position: relative;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .feature_content .fearture_grid_box .img_box {
@@ -857,6 +866,7 @@ header .pre-header {
 .coloring_pages_content .coloring_pages_grid_box .img_box {
     width: 100%;
     position: relative;
+        border: 1px solid var(--color-black);
     overflow: hidden;
     border-radius: 20px;
 }
@@ -876,6 +886,7 @@ header .pre-header {
     width: 100%;
     aspect-ratio: 1/1;
     border-radius: 20px;
+    transform: scale(1.12);
     object-fit: cover;
     object-position: top;
     border: 1px solid var(--color-black);
@@ -920,13 +931,26 @@ header .pre-header {
 }
 
 .coloring_pages_content .coloring_pages_grid_box .image_content a {
-    font-size: 24px;
+    background-color: var(--color-Pink);
+    color: var(--color-white);
+    padding: 15px 35px;
     font-family: var(--font-heading);
-    color: var(--color-black);
-    line-height: 1.5;
-    text-decoration: none;
-    font-weight: 600;
+    border-radius: 45px;
+    width: 100%;
+    text-transform: capitalize;
+    transition: 0.4s ease-in;
+    font-weight: 500;
     text-align: center;
+    line-height: 1em;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: var(--color-black) 4px 4px 0;
+}
+
+.coloring_pages_content .coloring_pages_grid_box .image_content a:hover {
+background-color: var(--color-Yellow);
+    box-shadow: var(--color-black) -4px -4px 0;
+    text-shadow: #00000060 1px 1px 1px;
 }
 
 .coloring_pages_content .coloring_pages_grid_box .image_content .hover_button {
@@ -1006,7 +1030,7 @@ header .pre-header {
 }
 
 .coloring_pages_content .image_content:hover img {
-    transform: scale(1.05);
+    transform: scale(1.12);
 }
 
 /* Category title styling - for both sections */
@@ -1119,8 +1143,8 @@ header .pre-header {
 .draw_pillow_section .cloud {
     width: 100%;
     background: linear-gradient(to bottom,
-            var(--color-Yellow) 0%,
-            var(--color-Yellow) 99%,
+            var(--color-white) 0%,
+            var(--color-white) 99%,
             var(--bg-color) 99%,
             var(--bg-color) 100%);
     left: 0;
