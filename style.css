@@ -674,12 +674,12 @@ header .pre-header {
 /* Feature Section Styles */
 .feature_row {
     background-color: var(--color-Yellow);
-    padding: 120px 20px;
+    padding: 120px 20px 80px;
 }
 
 .coloring_pages_row {
     background-color: var(--color-white);
-    padding: 120px 20px;
+    padding: 120px 20px 100px;
 }
 
 .feature_section {
@@ -1186,7 +1186,7 @@ background-color: var(--color-Yellow);
 
 .blog_section {
     background-color: #fff;
-    padding: 80px 0px;
+    padding: 100px 0px 40px;
     position: relative;
 }
 
