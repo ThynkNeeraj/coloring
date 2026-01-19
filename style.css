@@ -943,8 +943,17 @@ header .pre-header {
     text-align: center;
     line-height: 1em;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
     box-shadow: var(--color-black) 4px 4px 0;
+}
+
+.coloring_pages_content .coloring_pages_grid_box .image_content a span {
+    font-size: 14px;
+    height: 14px;
+    width: 14px;
+    padding: 2px;
+    background-color: var(--color-Yellow);
+    border-radius: 100%;
 }
 
 .coloring_pages_content .coloring_pages_grid_box .image_content a:hover {
