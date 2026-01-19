@@ -313,40 +313,6 @@ header .pre-header {
     -webkit-animation: car-move 5s ease infinite;
 }
 
-@keyframes car-move {
-    0% {
-        transform: translateX(-20px);
-        -webkit-transform: translateX(-20px);
-    }
-
-    50% {
-        transform: translateX(20px);
-        -webkit-transform: translateX(20px);
-    }
-
-    100% {
-        transform: translateX(-20px);
-        -webkit-transform: translateX(-20px);
-    }
-}
-
-@-webkit-keyframes car-move {
-    0% {
-        transform: translateX(-20px);
-        -webkit-transform: translateX(-20px);
-    }
-
-    50% {
-        transform: translateX(20px);
-        -webkit-transform: translateX(20px);
-    }
-
-    100% {
-        transform: translateX(-20px);
-        -webkit-transform: translateX(-20px);
-    }
-}
-
 .testimonial_slider .white_cloud {
     height: 70px;
     width: 70px;
@@ -386,6 +352,40 @@ header .pre-header {
     bottom: 10%;
     right: 2%;
     position: absolute;
+}
+
+@keyframes car-move {
+    0% {
+        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+    }
+
+    50% {
+        transform: translateX(20px);
+        -webkit-transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+    }
+}
+
+@-webkit-keyframes car-move {
+    0% {
+        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+    }
+
+    50% {
+        transform: translateX(20px);
+        -webkit-transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+    }
 }
 
 .hero-section .sun .wdt-custom-circle-path-animation path {

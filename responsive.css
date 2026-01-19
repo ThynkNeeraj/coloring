@@ -137,3 +137,33 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .testimonial_container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .testimonial_slider {
+        width: 100%;
+        padding: 40px 30px 40px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .customer_box {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .customer_box::before {
+        display: none;
+    }
+    
+    .testimonial_slider {
+        padding: 30px 20px;
+    }
+}
