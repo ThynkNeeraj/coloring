@@ -531,7 +531,7 @@ header .pre-header {
 /* Category Section Styles */
 .category_row {
     background-color: #FDF4E6;
-    padding: 120px 20px;
+    padding: 80px 20px 100px;
 }
 
 .category_section {
@@ -609,7 +609,7 @@ header .pre-header {
     width: 100%;
     position: relative;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 100%;
 }
 
 /* Category images are circular */
@@ -632,18 +632,34 @@ header .pre-header {
 }
 
 /* OLD YELLOW HOVER EFFECT - ONLY FOR CATEGORY CONTENT */
+.category_content .img_box {
+  position: relative;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
 .category_content .img_box::after {
-    content: "";
-    position: absolute;
-    background-color: var(--color-Yellow);
-    opacity: 0;
-    border-radius: 100%;
-    inset: 0px;
-    transition: opacity 0.3s;
+  content: "";
+  position: absolute;
+  background-color: var(--color-Yellow);
+  opacity: 0;
+  border-radius: 100%;
+  inset: 0px;
+  transform: scale(1.5);
+  transition: all .4s cubic-bezier(0.57, 1, 0, 1.5);
 }
 
 .category_content .image_content:hover .img_box::after {
-    opacity: 0.5;
+  opacity: 0.5;
+  transform: scale(1);
+}
+
+/* Make sure image has proper scaling */
+.category_content .img_box img {
+  transform: scale(1.1);
+  transition: transform .4s cubic-bezier(0.57, 1, 0, 1.5);
+  width: 100%;
+  height: auto;
 }
 
 /* Feature Section Styles */
@@ -652,11 +668,27 @@ header .pre-header {
     padding: 120px 20px;
 }
 
+.coloring_pages_row {
+    background-color: var(--color-white);
+    padding: 120px 20px;
+}
+
 .feature_section {
     position: relative;
 }
 
+.coloring_pages_section {
+    position: relative;
+}
+
 .feature_section .leaves {
+    height: 80px;
+    top: 10%;
+    right: 8%;
+    position: absolute;
+}
+
+.coloring_pages_section .leaves {
     height: 80px;
     top: 10%;
     right: 8%;
@@ -670,7 +702,22 @@ header .pre-header {
     position: absolute;
 }
 
+.coloring_pages_section .leapord {
+    height: 200px;
+    top: 10%;
+    right: 8%;
+    position: absolute;
+}
+
 .feature_section .black_dot_heart {
+    height: 80px;
+    top: 16%;
+    left: 12%;
+    transform: rotate(-30deg);
+    position: absolute;
+}
+
+.coloring_pages_section .black_dot_heart {
     height: 80px;
     top: 16%;
     left: 12%;
@@ -686,7 +733,25 @@ header .pre-header {
     position: absolute;
 }
 
+.coloring_pages_section .monkey {
+    height: 125px;
+    top: 12%;
+    left: 8%;
+    transform: rotate(0deg);
+    position: absolute;
+}
+
 .feature_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.coloring_pages_content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -719,7 +784,39 @@ header .pre-header {
     text-align: center;
 }
 
+.coloring_pages_content img {
+    width: 100px;
+}
+
+.coloring_pages_content .heading {
+    font-size: 43px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--color-black);
+    line-height: 1.2;
+}
+
+.coloring_pages_content p {
+    font-size: 18px;
+    font-family: var(--font-body);
+    color: var(--color-black);
+    line-height: 1.2;
+    width: 40%;
+    line-height: 1.5em;
+    font-weight: 500;
+    text-align: center;
+}
+
 .feature_content .fearture_grid_box {
+    display: grid;
+    gap: 40px;
+    margin-top: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.coloring_pages_content .coloring_pages_grid_box {
     display: grid;
     gap: 40px;
     margin-top: 30px;
@@ -739,6 +836,17 @@ header .pre-header {
     overflow: hidden;
 }
 
+.coloring_pages_content .coloring_pages_grid_box .image_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 .feature_content .fearture_grid_box .img_box {
     width: 100%;
     position: relative;
@@ -746,7 +854,25 @@ header .pre-header {
     border-radius: 20px;
 }
 
+.coloring_pages_content .coloring_pages_grid_box .img_box {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
 .feature_content .fearture_grid_box img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: top;
+    border: 1px solid var(--color-black);
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.coloring_pages_content .coloring_pages_grid_box img {
     width: 100%;
     aspect-ratio: 1/1;
     border-radius: 20px;
@@ -793,8 +919,61 @@ header .pre-header {
     transform: scale(1.05);
 }
 
+.coloring_pages_content .coloring_pages_grid_box .image_content a {
+    font-size: 24px;
+    font-family: var(--font-heading);
+    color: var(--color-black);
+    line-height: 1.5;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+}
+
+.coloring_pages_content .coloring_pages_grid_box .image_content .hover_button {
+    background-color: var(--bg-color);
+    color: var(--color-white);
+    padding: 15px 35px;
+    font-family: var(--font-heading);
+    border-radius: 45px;
+    text-transform: capitalize;
+    font-weight: 500;
+    transition: 0.4s ease-in;
+    line-height: 1em;
+    transition: 0.3s ease-in;
+    text-decoration: none;
+    position: absolute;
+    bottom: 20px;
+    font-size: 20px;
+    box-shadow: var(--color-black) 4px 4px 0;
+    z-index: 2;
+}
+
+.coloring_pages_content .coloring_pages_grid_box .image_content .hover_button:hover {
+    background-color: var(--color-Pink);
+    box-shadow: var(--color-black) -4px -4px 0;
+    text-shadow: #00000060 1px 1px 1px;
+    transform: scale(1.05);
+}
+
 /* Feature Hover Overlay Styles */
 .feature_content .hover_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.coloring_pages_content .hover_overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -818,6 +997,15 @@ header .pre-header {
 }
 
 .feature_content .image_content:hover img {
+    transform: scale(1.05);
+}
+
+.coloring_pages_content .image_content:hover .hover_overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.coloring_pages_content .image_content:hover img {
     transform: scale(1.05);
 }
 
