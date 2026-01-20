@@ -81,7 +81,7 @@ header .pre-header {
 .logo img {
     height: 80px;
     width: auto;
-    padding: 5px 0px 0px;
+    padding: 3px 0px 0px;
     object-fit: contain;
 }
 
@@ -181,6 +181,7 @@ header .pre-header {
 /* LOGO */
 .logo a img {
     width: 200px;
+    transform: scale(1.2);
 }
 
 /* SEARCH SECTION */
@@ -231,7 +232,7 @@ header .pre-header {
 
 /* BUTTON HOVER */
 .search-bar button:hover {
-    background: var(--bg-color);
+    background: var(--color-Pink);
 }
 
 /* FOCUS EFFECT */
@@ -642,33 +643,33 @@ header .pre-header {
 
 /* OLD YELLOW HOVER EFFECT - ONLY FOR CATEGORY CONTENT */
 .category_content .img_box {
-  position: relative;
-  border-radius: 100%;
-  overflow: hidden;
+    position: relative;
+    border-radius: 100%;
+    overflow: hidden;
 }
 
 .category_content .img_box::after {
-  content: "";
-  position: absolute;
-  background-color: var(--color-Yellow);
-  opacity: 0;
-  border-radius: 100%;
-  inset: 0px;
-  transform: scale(1.5);
-  transition: all .4s cubic-bezier(0.57, 1, 0, 1.5);
+    content: "";
+    position: absolute;
+    background-color: var(--color-Yellow);
+    opacity: 0;
+    border-radius: 100%;
+    inset: 0px;
+    transform: scale(1.5);
+    transition: all .4s cubic-bezier(0.57, 1, 0, 1.5);
 }
 
 .category_content .image_content:hover .img_box::after {
-  opacity: 0.5;
-  transform: scale(1);
+    opacity: 0.5;
+    transform: scale(1);
 }
 
 /* Make sure image has proper scaling */
 .category_content .img_box img {
-  transform: scale(1.1);
-  transition: transform .4s cubic-bezier(0.57, 1, 0, 1.5);
-  width: 100%;
-  height: auto;
+    transform: scale(1.1);
+    transition: transform .4s cubic-bezier(0.57, 1, 0, 1.5);
+    width: 100%;
+    height: auto;
 }
 
 /* Feature Section Styles */
@@ -866,7 +867,6 @@ header .pre-header {
 .coloring_pages_content .coloring_pages_grid_box .img_box {
     width: 100%;
     position: relative;
-    /* aspect-ratio: 1/1; */
     border: 1px solid var(--color-black);
     overflow: hidden;
     border-radius: 20px;
@@ -888,7 +888,6 @@ header .pre-header {
     border-radius: 20px;
     transform: scale(1);
     object-fit: cover;
-    object-position: top;
     border: 1px solid var(--color-black);
     transition: transform 0.3s ease;
     display: block;
@@ -957,7 +956,7 @@ header .pre-header {
 }
 
 .coloring_pages_content .coloring_pages_grid_box .image_content a:hover {
-background-color: var(--color-Yellow);
+    background-color: var(--color-Yellow);
     box-shadow: var(--color-black) -4px -4px 0;
     text-shadow: #00000060 1px 1px 1px;
 }
@@ -1032,7 +1031,8 @@ background-color: var(--color-Yellow);
 
 /* Magnify plus icon */
 .coloring_pages_content .hover_overlay::before {
-    content: "\f00e"; /* fa-magnifying-glass-plus */
+    content: "\f00e";
+    /* fa-magnifying-glass-plus */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     font-size: 42px;
@@ -1046,6 +1046,11 @@ background-color: var(--color-Yellow);
     justify-content: center;
     transform: scale(0.6);
     transition: transform 0.3s ease;
+}
+
+/* Make overlay clickable */
+.coloring_pages_content .hover_overlay {
+    cursor: pointer;
 }
 
 /* Icon zoom-in animation */
