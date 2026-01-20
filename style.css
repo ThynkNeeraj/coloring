@@ -700,7 +700,7 @@ header .pre-header {
 
 .coloring_pages_section .leaves {
     height: 80px;
-    top: 10%;
+    top: 8%;
     right: 8%;
     position: absolute;
 }
@@ -714,7 +714,7 @@ header .pre-header {
 
 .coloring_pages_section .leapord {
     height: 200px;
-    top: 10%;
+    top: 8%;
     right: 8%;
     position: absolute;
 }
@@ -729,8 +729,8 @@ header .pre-header {
 
 .coloring_pages_section .black_dot_heart {
     height: 80px;
-    top: 14%;
-    left: 12%;
+    top: 10%;
+    left: 14%;
     transform: rotate(-30deg);
     position: absolute;
 }
@@ -745,7 +745,7 @@ header .pre-header {
 
 .coloring_pages_section .monkey {
     height: 125px;
-    top: 12%;
+    top: 10%;
     left: 8%;
     transform: rotate(0deg);
     position: absolute;
