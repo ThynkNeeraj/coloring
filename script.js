@@ -1,82 +1,134 @@
-// Testimonial Slider Functionality - Simplified Version
+// Testimonial Slider with Enhanced Animations
 document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.slider_slide');
     const dots = document.querySelectorAll('.dot');
     let currentSlide = 0;
     let slideInterval;
-    const slideDuration = 5000; // 5 seconds
-
+    const slideDuration = 6000; // 6 seconds
+    
     // Initialize slider
     function initSlider() {
         // Set initial active states
         updateActiveSlide();
-        
-        // Start auto-slide
         startAutoSlide();
         
         // Add click events to dots
         dots.forEach(dot => {
-            dot.addEventListener('click', function() {
+            dot.addEventListener('click', function(e) {
+                e.stopPropagation();
                 const slideIndex = parseInt(this.getAttribute('data-slide'));
-                goToSlide(slideIndex);
-                resetAutoSlide();
+                
+                if (slideIndex !== currentSlide) {
+                    goToSlide(slideIndex);
+                    resetAutoSlide();
+                }
             });
         });
+        
+        // Pause on hover
+        const slider = document.querySelector('.testimonial_slider');
+        slider.addEventListener('mouseenter', pauseAutoSlide);
+        slider.addEventListener('mouseleave', resumeAutoSlide);
     }
-
+    
     function goToSlide(slideIndex) {
+        if (slideIndex === currentSlide) return;
+        
+        const oldSlide = slides[currentSlide];
+        const newSlide = slides[slideIndex];
+        
+        // Animate out current slide
+        oldSlide.classList.remove('active');
+        oldSlide.classList.add('slide-out');
+        
+        // Reset and prepare new slide
+        newSlide.style.display = 'block';
+        newSlide.classList.remove('slide-out');
+        newSlide.classList.add('slide-in');
+        
         currentSlide = slideIndex;
         
-        // Loop back to first slide if at end
-        if (currentSlide >= slides.length) {
-            currentSlide = 0;
-        }
-        
-        // Loop to last slide if before first
-        if (currentSlide < 0) {
-            currentSlide = slides.length - 1;
-        }
-        
-        updateActiveSlide();
+        // Update active state after animation
+        setTimeout(() => {
+            oldSlide.style.display = 'none';
+            oldSlide.classList.remove('slide-in', 'slide-out');
+            newSlide.classList.remove('slide-in');
+            newSlide.classList.add('active');
+            updateDots();
+        }, 800); // Match animation duration
     }
-
+    
     function updateActiveSlide() {
-        // Update slides - using display instead of opacity to prevent height issues
+        // Remove all inline styles and reset
         slides.forEach((slide, index) => {
+            slide.style.display = index === currentSlide ? 'block' : 'none';
+            slide.classList.remove('active', 'slide-in', 'slide-out');
+            
             if (index === currentSlide) {
-                slide.style.display = 'block';
-                slide.style.opacity = '1';
-                slide.style.visibility = 'visible';
-            } else {
-                slide.style.display = 'none';
-                slide.style.opacity = '0';
-                slide.style.visibility = 'hidden';
+                slide.classList.add('active');
             }
         });
         
-        // Update dots
+        updateDots();
+    }
+    
+    function updateDots() {
         dots.forEach((dot, index) => {
-            if (index === currentSlide) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
+            const isActive = index === currentSlide;
+            dot.classList.toggle('active', isActive);
+            
+            // Reset and restart progress animation
+            const progress = dot.querySelector('.slide-progress');
+            if (progress) {
+                progress.style.animation = 'none';
+                
+                if (isActive) {
+                    setTimeout(() => {
+                        progress.style.animation = `progress ${slideDuration}ms linear forwards`;
+                    }, 10);
+                }
             }
         });
     }
-
+    
     function nextSlide() {
-        goToSlide(currentSlide + 1);
+        const next = (currentSlide + 1) % slides.length;
+        goToSlide(next);
     }
-
+    
     function startAutoSlide() {
         slideInterval = setInterval(nextSlide, slideDuration);
     }
-
+    
     function resetAutoSlide() {
         clearInterval(slideInterval);
         startAutoSlide();
     }
-
-    // Initialize the slider
+    
+    function pauseAutoSlide() {
+        clearInterval(slideInterval);
+        
+        // Pause progress animation
+        dots.forEach(dot => {
+            const progress = dot.querySelector('.slide-progress');
+            if (progress && dot.classList.contains('active')) {
+                progress.style.animationPlayState = 'paused';
+            }
+        });
+    }
+    
+    function resumeAutoSlide() {
+        // Resume progress animation
+        dots.forEach(dot => {
+            const progress = dot.querySelector('.slide-progress');
+            if (progress && dot.classList.contains('active')) {
+                progress.style.animationPlayState = 'running';
+            }
+        });
+        
+        startAutoSlide();
+    }
+    
+    // Initialize
     initSlider();
 });
