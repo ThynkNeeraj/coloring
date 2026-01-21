@@ -132,3 +132,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize
     initSlider();
 });
+
+document.addEventListener("click", function (e) {
+            /* Overlay Icon Click → Open WebP */
+            if (e.target.closest(".coloring_pages_content .hover_overlay")) {
+                const overlay = e.target.closest(".hover_overlay");
+                const imgBox = overlay.closest(".img_box");
+                if (!imgBox) return;
+
+                const img = imgBox.querySelector("img");
+                if (!img) return;
+
+                const webpUrl = img.src.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+                window.open(webpUrl, "_blank");
+                return;
+            }
+
+            /* Print Button Click */
+            if (e.target.closest(".category_title")) {
+                e.preventDefault();
+                const btn = e.target.closest(".category_title");
+                const imgBox = btn.previousElementSibling;
+                if (!imgBox) return;
+
+                const img = imgBox.querySelector("img");
+                if (!img) return;
+
+                const printWindow = window.open("", "_blank");
+                printWindow.document.write(
+                    '<img src="' + img.src + '" onload="window.print();window.close();">'
+                );
+            }
+        });

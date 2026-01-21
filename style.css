@@ -25,88 +25,209 @@
 
 /* ===== ANIMATIONS ===== */
 @keyframes spring {
-    0% { transform: scale3d(1, 1, 1); }
-    30% { transform: scale3d(0.75, 1.25, 1); }
-    40% { transform: scale3d(1.25, 0.75, 1); }
-    50% { transform: scale3d(0.85, 1.15, 1); }
-    65% { transform: scale3d(1.05, 0.95, 1); }
-    75% { transform: scale3d(0.95, 1.05, 1); }
-    100% { transform: scale3d(1, 1, 1); }
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    40% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    50% {
+        transform: scale3d(0.85, 1.15, 1);
+    }
+
+    65% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    75% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
 }
 
 @keyframes move {
-    from, to { transform: translate3d(0, 0, 0); }
-    10%, 30%, 50%, 70%, 90% { transform: translate3d(5px, 0, 0); }
-    20%, 40%, 60%, 80% { transform: translate3d(-5px, 0, 0); }
+
+    from,
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translate3d(5px, 0, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translate3d(-5px, 0, 0);
+    }
 }
 
 @keyframes moveRotate {
-    from, to { transform: translateX(0px) rotate(0deg); }
-    50% { transform: translateX(14px) rotate(-14deg); }
-    100% { transform: translateX(0px) rotate(0deg); }
+
+    from,
+    to {
+        transform: translateX(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(14px) rotate(-14deg);
+    }
+
+    100% {
+        transform: translateX(0px) rotate(0deg);
+    }
 }
 
 @keyframes rotate-alt {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes elementor-animation-bob {
-    0% { transform: translateY(-8px); }
-    50% { transform: translateY(-4px); }
-    100% { transform: translateY(-8px); }
+    0% {
+        transform: translateY(-8px);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(-8px);
+    }
 }
 
 @keyframes bounce {
-    20%, 53%, 80%, from, to {
-        animation-timing-function: cubic-bezier(.215,.61,.355,1);
-        transform: translate3d(0,0,0);
+
+    20%,
+    53%,
+    80%,
+    from,
+    to {
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        transform: translate3d(0, 0, 0);
     }
-    40%, 43% {
-        animation-timing-function: cubic-bezier(.755,.050,.855,.060);
-        transform: translate3d(0,-30px,0);
+
+    40%,
+    43% {
+        animation-timing-function: cubic-bezier(.755, .050, .855, .060);
+        transform: translate3d(0, -30px, 0);
     }
+
     70% {
-        animation-timing-function: cubic-bezier(.755,.050,.855,.060);
-        transform: translate3d(0,-15px,0);
+        animation-timing-function: cubic-bezier(.755, .050, .855, .060);
+        transform: translate3d(0, -15px, 0);
     }
-    90% { transform: translate3d(0,-4px,0); }
+
+    90% {
+        transform: translate3d(0, -4px, 0);
+    }
 }
 
 @keyframes flash {
-    50%, from, to { opacity: 1; }
-    25%, 75% { opacity: 0; }
+
+    50%,
+    from,
+    to {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
 }
 
 @keyframes rotate-x {
-    50% { transform: rotate(-20deg); }
+    50% {
+        transform: rotate(-20deg);
+    }
 }
 
 @keyframes car-move {
-    0%, 100% { transform: translateX(-20px); }
-    50% { transform: translateX(20px); }
+
+    0%,
+    100% {
+        transform: translateX(-20px);
+    }
+
+    50% {
+        transform: translateX(20px);
+    }
 }
 
 @keyframes slideIn {
-    0% { opacity: 0; transform: translateX(30px) scale(0.95); }
-    100% { opacity: 1; transform: translateX(0) scale(1); }
+    0% {
+        opacity: 0;
+        transform: translateX(30px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
 }
 
 @keyframes slideOut {
-    0% { opacity: 1; transform: translateX(0) scale(1); }
-    100% { opacity: 0; transform: translateX(-30px) scale(0.95); }
+    0% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-30px) scale(0.95);
+    }
 }
 
 @keyframes starPop {
-    0% { opacity: 0; transform: translateY(10px) scale(0.5); }
-    70% { transform: translateY(-5px) scale(1.1); }
-    100% { opacity: 1; transform: translateY(0) scale(1); }
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.5);
+    }
+
+    70% {
+        transform: translateY(-5px) scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 @keyframes marquee-down {
-    0% { transform: translateY(-100%); }
-    50% { transform: translateY(-75%); }
-    100% { transform: translateY(-50%); }
+    0% {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        transform: translateY(-75%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
 }
 
 /* ===== HEADER STYLES ===== */
@@ -168,7 +289,7 @@ header .pre-header {
     width: 40%;
 }
 
-.main-nav > ul {
+.main-nav>ul {
     display: flex;
     gap: 65px;
     list-style: none;
@@ -367,7 +488,7 @@ header .pre-header {
     position: absolute;
 }
 
-.hero-section .rainbow svg g > .wdt-custom-demo_s-class-5 {
+.hero-section .rainbow svg g>.wdt-custom-demo_s-class-5 {
     animation: elementor-animation-bob .6s infinite linear;
 }
 
@@ -1318,7 +1439,7 @@ header .pre-header {
     color: var(--color-black);
 }
 
-.testimonial_content > p {
+.testimonial_content>p {
     font-size: 18px;
     line-height: 1.7;
     font-family: var(--font-body);
@@ -1420,7 +1541,7 @@ header .pre-header {
     position: absolute;
 }
 
-.testimonial_slider .rainbow svg g > .wdt-custom-demo_s-class-5 {
+.testimonial_slider .rainbow svg g>.wdt-custom-demo_s-class-5 {
     animation: elementor-animation-bob .6s infinite linear;
 }
 
@@ -1548,11 +1669,25 @@ header .pre-header {
     transform: scale(1);
 }
 
-.slider_slide.active .stars i:nth-child(1) { animation: starPop 0.5s ease 0.5s forwards; }
-.slider_slide.active .stars i:nth-child(2) { animation: starPop 0.5s ease 0.6s forwards; }
-.slider_slide.active .stars i:nth-child(3) { animation: starPop 0.5s ease 0.7s forwards; }
-.slider_slide.active .stars i:nth-child(4) { animation: starPop 0.5s ease 0.8s forwards; }
-.slider_slide.active .stars i:nth-child(5) { animation: starPop 0.5s ease 0.9s forwards; }
+.slider_slide.active .stars i:nth-child(1) {
+    animation: starPop 0.5s ease 0.5s forwards;
+}
+
+.slider_slide.active .stars i:nth-child(2) {
+    animation: starPop 0.5s ease 0.6s forwards;
+}
+
+.slider_slide.active .stars i:nth-child(3) {
+    animation: starPop 0.5s ease 0.7s forwards;
+}
+
+.slider_slide.active .stars i:nth-child(4) {
+    animation: starPop 0.5s ease 0.8s forwards;
+}
+
+.slider_slide.active .stars i:nth-child(5) {
+    animation: starPop 0.5s ease 0.9s forwards;
+}
 
 .customer_info p {
     padding: 0px;
@@ -1754,18 +1889,4 @@ header .pre-header {
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
-}
-
-/* ===== CATEGORY TITLE (SHARED) ===== */
-.category_title {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    font-size: 18px;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-.category_title:hover {
-    color: #007bff;
 }
