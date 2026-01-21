@@ -181,7 +181,7 @@ header .pre-header {
 /* LOGO */
 .logo a img {
     width: 200px;
-    transform: scale(1.2);
+    transform: scale(1);
 }
 
 /* SEARCH SECTION */
@@ -261,7 +261,7 @@ header .pre-header {
 
 .hero-section .bottom_right_corner {
     height: 275px;
-    bottom: -1;
+    bottom: -1px;
     right: 0;
     position: absolute;
 }
@@ -1092,7 +1092,7 @@ header .pre-header {
     align-items: center;
     flex-direction: row-reverse;
     height: 100%;
-    background-image: url(/Assets/images/purple-bg.jpg);
+    background-image: url(/Assets/images/purple-bg.webp);
     max-width: 1200px;
     background-size: cover;
     background-repeat: no-repeat;
