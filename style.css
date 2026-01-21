@@ -727,11 +727,11 @@ header .pre-header {
     position: absolute;
 }
 
-.coloring_pages_section .black_dot_heart {
-    height: 80px;
+.coloring_pages_section .atom {
+    height: 90px;
     top: 10%;
     left: 14%;
-    transform: rotate(-30deg);
+    animation: rotate-alt ease-in 8s infinite;
     position: absolute;
 }
 
@@ -743,11 +743,11 @@ header .pre-header {
     position: absolute;
 }
 
-.coloring_pages_section .monkey {
-    height: 125px;
-    top: 10%;
-    left: 8%;
-    transform: rotate(0deg);
+.coloring_pages_section .masonry-rocket {
+    height: 180px;
+    top: 8%;
+    animation: moveRotate 6s ease-in-out infinite;
+    right: 10%;
     position: absolute;
 }
 
